@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Necessary newsboat config
+#
+# notify-always yes
+# notify-format "%d %n %f"
+# notify-program "<plugin-installation-dir>/bin/tmux-newsboat"
+
+MESSAGE="$1"
+
+set -- placholder $MESSAGE
+shift
+
+NEW_ARTICLES="$1"
+UNREAD_ARTICLES="$2"
+UNREAD_FEEDS="$3"
+
+# TODO: fetch path from tmux variable
+echo $NEW_ARTICLES > ~/.config/tmux/newsboat/new_articles
+echo $UNREAD_ARTICLES > ~/.config/tmux/newsboat/unread_articles
+echo $UNREAD_FEEDS > ~/.config/tmux/newsboat/unread_feeds

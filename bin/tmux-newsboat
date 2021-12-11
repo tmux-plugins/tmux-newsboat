@@ -15,7 +15,14 @@ NEW_ARTICLES="$1"
 UNREAD_ARTICLES="$2"
 UNREAD_FEEDS="$3"
 
-# TODO: fetch path from tmux variable
-echo $NEW_ARTICLES > ~/.config/tmux/newsboat/new_articles
-echo $UNREAD_ARTICLES > ~/.config/tmux/newsboat/unread_articles
-echo $UNREAD_FEEDS > ~/.config/tmux/newsboat/unread_feeds
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PLUGIN_DIR="$CURRENT_DIR/.." # required by scripts/helpers.sh
+
+source "$CURRENT_DIR/../scripts/helpers.sh"
+
+main() {
+  echo $NEW_ARTICLES > "$(new_articles_file)"
+  echo $UNREAD_ARTICLES > "$(unread_articles_file)"
+  echo $UNREAD_FEEDS > "$(unread_feeds_file)"
+}
+main

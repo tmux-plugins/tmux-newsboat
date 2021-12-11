@@ -30,15 +30,18 @@ After installing the plugin, there are a couple more installation steps:
 
 - Ensure `newsboat` has the following config:
 
-    notify-always yes
-    notify-format "%d %n %f"
-    notify-program "<plugin-installation-dir>/bin/tmux-newsboat"
+```
+notify-always yes
+notify-format "%d %n %f"
+notify-program "<plugin-installation-dir>/bin/tmux-newsboat"
+```
 
 - Where `<plugin-installation-dir>` from the above will most likely be
   - `~/.tmux/plugins/tmux-newsboat`
   - or `~/.config/tmux/plugins/tmux-newsboat`
 
-- Add one or more supported format strings to tmux's `status-right`:
+- Add one or more supported format strings to tmux's `status-right` (or
+  `status-left if that's your thing):
   - `#{newsboat_new_articles}`
   - `#{newsboat_unread_articles}`
   - `#{newsboat_unread_feeds}`

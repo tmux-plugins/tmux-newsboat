@@ -27,7 +27,7 @@ create_default_files() {
     echo "?" > "$(unread_articles_file)"
   fi
   if [ ! -f "$(unread_feeds_file)" ]; then
-    echo "?" > "$(enread_feeds_file)"
+    echo "?" > "$(unread_feeds_file)"
   fi
 }
 
